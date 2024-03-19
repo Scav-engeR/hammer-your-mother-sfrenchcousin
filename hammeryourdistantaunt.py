@@ -76,6 +76,10 @@ q = Queue()
 w = Queue()
 
 class MyTest(BaseCase):
+    def setUp(self):
+        # Initialize SeleniumBase framework
+        super(MyTest, self).setUp()
+
     def dos(self):
         # This method sends HTTP requests to the target server.
         iterations = 10  # Number of iterations to run (adjust as needed)
@@ -105,5 +109,6 @@ if __name__ == "__main__":
     user_agent()
     my_bots()
     test = MyTest()  # Create an instance of MyTest
+    test.setUp()  # Initialize SeleniumBase framework
     test.dos()  # Call the dos() method on the instance
     test.dos2()  # Call the dos2() method on the instance
