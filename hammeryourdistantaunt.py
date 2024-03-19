@@ -104,6 +104,6 @@ if __name__ == "__main__":
     print("\033[94mPlease wait...\033[0m")
     user_agent()
     my_bots()
-    test = MyTest()
-    test.dos()
-    test.dos2()
+    test = MyTest()  # Create an instance of MyTest
+    test.dos()  # Call the dos() method on the instance
+    test.dos2()  # Call the dos2() method on the instance
